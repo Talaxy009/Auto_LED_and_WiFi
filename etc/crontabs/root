@@ -1,0 +1,11 @@
+0 1 * * * /root/wifi/wifioff.sh
+30 7 * * 2 - 5 /root/wifi/wifion.sh
+0 8 * * 0,1,6 /root/wifi/wifion.sh
+0 10 * * * /root/leds/orange.sh
+0 12 * * * /root/leds/yellow.sh
+0 15 * * * /root/leds/pink.sh
+0 18 * * * /root/leds/purple.sh
+0 20 * * * /root/leds/lightblue.sh
+0 22 * * * /root/leds/blue.sh
+0 0 * * * /root/leds/dark.sh
+0 7 * * * reboot
