@@ -1,0 +1,33 @@
+# crontab文件格式说明
+#  ——分钟 (0 - 59)
+# |  ——小时 (0 - 23)
+# | |  ——日   (1 - 31)
+# | | |  ——月   (1 - 12)
+# | | | |  ——星期 (0 - 7)（星期日=0或7）
+# | | | | |
+# * * * * * 被执行的命令
+
+# crontab（我把wifi和led的脚本分别放在路由器的/root/leds/或/root/wifi/中了）
+# 0 1 * * * /root/wifioff //一点关wifi
+# 30 7 * * 2 - 5 /root/wifion //星期二~五，7：30开WiFi
+# 0 8 * * 0,1,6 /root/wifion //星期日、一、六，8点开WiFi
+# 0 10 * * * /root/orange //10点橙色LED
+# 0 12 * * * /root/yellow //12点黄色LED
+# 0 15 * * * /root/pink //15点粉色LED
+# 0 18 * * * /root/purple //18点紫色LED
+# 0 20 * * * /root/lightblue.sh //20点亮蓝色LED
+# 0 22 * * * /root/blue //22点蓝色LED
+# 0 0 * * * /root/dark //0点关闭LED
+# 0 7 * * * reboot //7点重启，LED重置为红色
+
+# leds的shell
+# echo 0 >/sys/class/leds/phicomm:color:status/brightness
+# echo 1 >/sys/class/leds/phicomm:color:status/brightness
+# (0是灭，1是亮)
+
+# WiFi的shell
+# uci set wireless.ra0.disabled=0 //2.4g WiFi
+# uci set wireless.rai0.disabled=0 //5g WiFi
+# wifi
+# uci commit //保存&应用
+# (0是开启，1是关闭)
