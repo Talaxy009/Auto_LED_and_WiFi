@@ -9,7 +9,7 @@
 
 # crontab（我把wifi和led的脚本分别放在路由器的/root/leds/或/root/wifi/中了）
 # 0 1 * * * /root/wifioff //一点关wifi
-# 30 7 * * 2 - 5 /root/wifion //星期二~五，7：30开WiFi
+# 30 7 * * 2-5 /root/wifion //星期二~五，7：30开WiFi
 # 0 8 * * 0,1,6 /root/wifion //星期日、一、六，8点开WiFi
 # 0 10 * * * /root/orange //10点橙色LED
 # 0 12 * * * /root/yellow //12点黄色LED
